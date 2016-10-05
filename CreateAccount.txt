@@ -1,0 +1,25 @@
+<!--********************************************************************************************
+*   @Author :       Saritha
+*   @Purpose:       To create an Account record
+*   @Page           CreateAccount
+*   @Class          CreateAccountController
+*   @CreatedDate:   29-Sep-2016
+********************************************************************************************** -->
+<apex:page controller="CreateAccountController">
+	<apex:form >
+	
+		<apex:pageBlock >
+		
+			<apex:pageBlockSection columns="1">
+			<apex:inputField value="{!accRec.name}"/>
+			<apex:inputField value="{!accRec.rating}"/>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockButtons location="bottom">
+			<apex:commandButton value="Save" action="{!createAccount}"/>
+			</apex:pageBlockButtons>
+		
+		</apex:pageBlock>
+	
+	</apex:form>
+</apex:page>

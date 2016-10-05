@@ -1,0 +1,28 @@
+<!--********************************************************************************************
+*   @Author :       Saritha
+*   @Purpose:       To display the Account Details from ORG2
+*   @Page           API_Accounts
+*   @Class          AccountIntegrationHandler
+*   @CreatedDate:   29-Sep-2016
+********************************************************************************************** -->
+<apex:page controller="AccountIntegrationHandler">
+	<apex:form >
+	
+		<apex:pageBlock title="Accounts">
+		
+			<apex:pageBlockTable value="{!AccountPaginationList}" var="acc">
+			<apex:column headerValue="Id" value="{!acc.id}"/>
+			<apex:column headerValue="Name" value="{!acc.name}"/>
+			<apex:column headerValue="Rating" value="{!acc.rating}"/>
+			</apex:pageBlockTable>
+			
+			<apex:pageBlockButtons location="top" >					
+			<apex:commandLink value="CreateNewAccount" action="{!NavigateToCreateAccount}"  target="_blank" styleClass="btn" style="text-decoration:none;padding:4px;" />
+			</apex:pageBlockButtons>
+			<apex:commandButton action="{!previous}" rendered="{!hasPrevious}" value="Previous" style="float:right;"/>
+			<apex:commandButton action="{!next}" rendered="{!hasNext}" value="Next" style="float:right;"/>
+
+		</apex:pageBlock>
+	
+	</apex:form>
+</apex:page>
